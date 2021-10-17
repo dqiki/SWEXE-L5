@@ -18,6 +18,6 @@ class UsersController < ApplicationController
       flash[:notice] = '1レコード削除しました'
     end
     redirect_to root_path
-    end
+  end
 end
 
