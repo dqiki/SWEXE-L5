@@ -8,9 +8,13 @@ class UsersController < ApplicationController
   def create
     uid = params[:user][:uid]
     pass = BCrypt::Password.create(params[:user][:pass])
-    user = User.new(uid: uid, pass: pass)
-    user.save
-    redirect_to root_path
+    @user = User.new(uid: uid, pass: pass)
+    if
+      @user.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
   def destroy
     user = User.find(params[:id])
@@ -20,4 +24,3 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 end
-

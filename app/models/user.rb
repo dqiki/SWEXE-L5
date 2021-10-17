@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :tweets
     has_many :likes
-    has_many :like_tweets, through: :likes, source: :user
+    has_many :like_tweets, through: :likes, source: :tweet
+    validates :name, uniqueness: true
 end
