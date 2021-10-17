@@ -1,4 +1,4 @@
 class Like < ApplicationRecord
-belongs_to :users
-belongs_to :tweets
+belongs_to :user
+belongs_to :tweet
 end
