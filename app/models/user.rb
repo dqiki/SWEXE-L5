@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :tweets
+    belongs_to :tweets
     has_many :likes
-    has_many :like_tweets, through: :likes, source: :tweet
+    has_many :like_users, through: :likes, source: :user
 end
